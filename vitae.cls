@@ -61,7 +61,7 @@
                 \setlength{\partopsep}{1.0ex plus0.1ex minus0.1ex}}}
 {\end{list}}
 
-\newenvironment{publist}[1]{{\scshape\Large #1}%
+\newenvironment{publist}[1]{\vspace{4.0ex plus 1.0ex minus 1.0ex}{\scshape\Large #1}%
 %\begin{list}{}{ \setlength{\leftmargin}{36pt}
 %                \setlength{\labelwidth}{0pt}
 %                \setlength{\labelsep}{0pt}
