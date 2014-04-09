@@ -27,12 +27,12 @@
 
 % lengths for various boxes
 \newlength{\chronlistTitlelength}   % length of grayscale box containing title of a chronological list
+
+\newenvironment{chronlist}[1]{%
 \setlength{\chronlistTitlelength}{\linewidth}
 \addtolength{\chronlistTitlelength}{-2\fboxsep}
 \addtolength{\chronlistTitlelength}{-2\fboxrule}
-
-\newenvironment{chronlist}[1]{%
-\colorbox{grey95}{\makebox[\chronlistTitlelength][l]{\sc\large\textbf{ #1\hrulefill}}}%
+\colorbox{grey95}{\makebox[\chronlistTitlelength][l]{\scshape\Large #1\hrulefill}}%
 \begin{list}{}{ \setlength{\topsep}{1.0ex plus0.1ex minus0.1ex}%
                 \setlength{\leftmargin}{96pt}%
                 \setlength{\labelwidth}{86pt}%
@@ -45,7 +45,10 @@
 {\end{list}}
 
 \newenvironment{genericlist}[1]{%
-\colorbox{grey95}{\makebox[\chronlistTitlelength][l]{\sc\large\textbf{ #1\hrulefill}}}%
+\setlength{\chronlistTitlelength}{\linewidth}
+\addtolength{\chronlistTitlelength}{-2\fboxsep}
+\addtolength{\chronlistTitlelength}{-2\fboxrule}
+\colorbox{grey95}{\makebox[\chronlistTitlelength][l]{\scshape\Large #1\hrulefill}}%
 \begin{list}{}{ \setlength{\topsep}{1.0ex plus0.1ex minus0.1ex}
                \setlength{\leftmargin}{36pt}
                 \setlength{\labelwidth}{0pt}
@@ -56,7 +59,7 @@
                 \setlength{\partopsep}{0ex plus0.1ex minus0.1ex}}}
 {\end{list}}
 
-\newenvironment{publist}[1]{{\sc\large\textbf{ #1}}%
+\newenvironment{publist}[1]{{\scshape\Large #1}%
 %\begin{list}{}{ \setlength{\leftmargin}{36pt}
 %                \setlength{\labelwidth}{0pt}
 %                \setlength{\labelsep}{0pt}
