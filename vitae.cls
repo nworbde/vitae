@@ -34,7 +34,7 @@
 \addtolength{\chronlistTitlelength}{-2\fboxrule}
 \vspace{4.0ex plus 1ex minus 1ex}
 \colorbox{grey95}{\makebox[\chronlistTitlelength][l]{\scshape\Large #1\hrulefill}}%
-\begin{list}{}{ \setlength{\topsep}{1.0ex plus0.1ex minus0.1ex}%
+\begin{list}{}{ \nopagebreak\setlength{\topsep}{1.0ex plus0.1ex minus0.1ex}%
                 \setlength{\leftmargin}{96pt}%
                 \setlength{\labelwidth}{86pt}%
                 \setlength{\labelsep}{4pt}%
@@ -51,7 +51,7 @@
 \addtolength{\chronlistTitlelength}{-2\fboxrule}
 \vspace{4.0ex plus 1ex minus 1ex}
 \colorbox{grey95}{\makebox[\chronlistTitlelength][l]{\scshape\Large #1\hrulefill}}%
-\begin{list}{}{ \setlength{\topsep}{-1ex plus0.3ex minus0.3ex}
+\begin{list}{}{ \nopagebreak\setlength{\topsep}{-1ex plus0.3ex minus0.3ex}
                \setlength{\leftmargin}{36pt}
                 \setlength{\labelwidth}{0pt}
                 \setlength{\labelsep}{0pt}
