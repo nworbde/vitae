@@ -32,6 +32,7 @@
 \setlength{\chronlistTitlelength}{\linewidth}
 \addtolength{\chronlistTitlelength}{-2\fboxsep}
 \addtolength{\chronlistTitlelength}{-2\fboxrule}
+\vspace{4.0ex plus 1ex minus 1ex}
 \colorbox{grey95}{\makebox[\chronlistTitlelength][l]{\scshape\Large #1\hrulefill}}%
 \begin{list}{}{ \setlength{\topsep}{1.0ex plus0.1ex minus0.1ex}%
                 \setlength{\leftmargin}{96pt}%
@@ -40,7 +41,7 @@
                 \setlength{\parsep}{1.0ex plus0.1ex minus0.1ex}%
                 \setlength{\partopsep}{1.0ex plus0.1ex minus0.1ex}%
                 \setlength{\itemsep}{0ex}%
-                \renewcommand{\makelabel}[1]{\parbox[t]{86pt}{\it
+                \renewcommand{\makelabel}[1]{\parbox[t]{86pt}{\itshape
                 ##1}\hfill}}}%
 {\end{list}}
 
@@ -48,15 +49,16 @@
 \setlength{\chronlistTitlelength}{\linewidth}
 \addtolength{\chronlistTitlelength}{-2\fboxsep}
 \addtolength{\chronlistTitlelength}{-2\fboxrule}
+\vspace{4.0ex plus 1ex minus 1ex}
 \colorbox{grey95}{\makebox[\chronlistTitlelength][l]{\scshape\Large #1\hrulefill}}%
-\begin{list}{}{ \setlength{\topsep}{1.0ex plus0.1ex minus0.1ex}
+\begin{list}{}{ \setlength{\topsep}{-1ex plus0.3ex minus0.3ex}
                \setlength{\leftmargin}{36pt}
                 \setlength{\labelwidth}{0pt}
                 \setlength{\labelsep}{0pt}
                 \setlength{\itemindent}{-24pt}
                 \setlength{\itemsep}{0ex}
                 \setlength{\parsep}{1.0ex plus0.1ex minus0.1ex}
-                \setlength{\partopsep}{0ex plus0.1ex minus0.1ex}}}
+                \setlength{\partopsep}{1.0ex plus0.1ex minus0.1ex}}}
 {\end{list}}
 
 \newenvironment{publist}[1]{{\scshape\Large #1}%
