@@ -24,13 +24,15 @@
 \setlength{\textwidth}{456pt}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{2.0ex plus0.1ex minus0.1ex}
-\newlength{\MyLength}
+
+% lengths for various boxes
+\newlength{\chronlistTitlelength}   % length of grayscale box containing title of a chronological list
+\setlength{\chronlistTitlelength}{\linewidth}
+\addtolength{\chronlistTitlelength}{-2\fboxsep}
+\addtolength{\chronlistTitlelength}{-2\fboxrule}
 
 \newenvironment{chronlist}[1]{%
-\setlength{\MyLength}{\linewidth}%
-\addtolength{\MyLength}{-2\fboxsep}%
-\addtolength{\MyLength}{-2\fboxrule}%
-\colorbox{grey95}{\makebox[\MyLength][l]{\sc\large\textbf{ #1\hrulefill}}}%
+\colorbox{grey95}{\makebox[\chronlistTitlelength][l]{\sc\large\textbf{ #1\hrulefill}}}%
 \begin{list}{}{ \setlength{\topsep}{1.0ex plus0.1ex minus0.1ex}%
                 \setlength{\leftmargin}{96pt}%
                 \setlength{\labelwidth}{86pt}%
@@ -43,10 +45,7 @@
 {\end{list}}
 
 \newenvironment{genericlist}[1]{%
-\setlength{\MyLength}{\linewidth}%
-\addtolength{\MyLength}{-2\fboxsep}%
-\addtolength{\MyLength}{-2\fboxrule}%
-\colorbox{grey95}{\makebox[\MyLength][l]{\sc\large\textbf{ #1\hrulefill}}}%
+\colorbox{grey95}{\makebox[\chronlistTitlelength][l]{\sc\large\textbf{ #1\hrulefill}}}%
 \begin{list}{}{ \setlength{\topsep}{1.0ex plus0.1ex minus0.1ex}
                \setlength{\leftmargin}{36pt}
                 \setlength{\labelwidth}{0pt}
