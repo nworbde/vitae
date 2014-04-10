@@ -20,7 +20,8 @@
 % Set page lengths
 \setlength{\oddsidemargin}{0pt}
 \setlength{\topmargin}{0pt}
-\setlength{\textheight}{632pt}
+\setlength{\textheight}{628pt}
+\setlength{\headheight}{14pt}
 \setlength{\textwidth}{456pt}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{2.0ex plus0.1ex minus0.1ex}
