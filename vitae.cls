@@ -12,7 +12,7 @@
   Document Style: `vitae' v\fileversion \space <\filedate>}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
 \ProcessOptions
-\usepackage{color}
+\usepackage[x11names]{xcolor}
 \usepackage{etaremune}
 \LoadClass{report}
 \definecolor{grey95}{rgb}{0.949,0.949,0.949}
