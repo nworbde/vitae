@@ -39,19 +39,19 @@
 {\scshape\Large #1}}
 
 \newenvironment{chronlist}{%
-\begin{list}{}{ \setlength{\topsep}{1.0ex plus0.1ex minus0.1ex}%
-                \setlength{\leftmargin}{96pt}%
-                \setlength{\labelwidth}{86pt}%
-                \setlength{\labelsep}{4pt}%
-                \setlength{\parsep}{1.0ex plus0.1ex minus0.1ex}%
-                \setlength{\partopsep}{1.0ex plus0.1ex minus0.1ex}%
-                \setlength{\itemsep}{0ex}%
+\begin{list}{}{ \setlength{\topsep}{0ex plus0.1ex minus0.3ex}
+                \setlength{\leftmargin}{96pt}
+                \setlength{\labelwidth}{86pt}
+                \setlength{\labelsep}{4pt}
+                \setlength{\parsep}{1.0ex plus0.1ex minus0.1ex}
+                \setlength{\partopsep}{1.0ex plus0.1ex minus0.1ex}
+                \setlength{\itemsep}{0ex}
                 \renewcommand{\makelabel}[1]{\parbox[t]{86pt}{\itshape
-                ##1}\hfill}}}%
-{\end{list}\vspace{4.0ex plus 1ex minus 1ex}}
+                ##1}\hfill}}}
+{\end{list}\vspace{4.0ex plus 0.5ex minus 0.1ex}}
 
 \newenvironment{genericlist}{%
-\begin{list}{}{ \setlength{\topsep}{1.0ex plus0.1ex minus0.1ex}
+\begin{list}{}{ \setlength{\topsep}{0ex plus0.1ex minus0.3ex}
                 \setlength{\leftmargin}{36pt}
                 \setlength{\labelwidth}{0pt}
                 \setlength{\labelsep}{0pt}
@@ -59,7 +59,7 @@
                 \setlength{\itemsep}{0ex}
                 \setlength{\parsep}{1.0ex plus0.1ex minus0.1ex}
                 \setlength{\partopsep}{1.0ex plus0.1ex minus0.1ex}}}
-{\end{list}\vspace{4.0ex plus 1ex minus 1ex}}
+{\end{list}\vspace{4.0ex plus 0.5ex minus 0.1ex}}
 
 \newenvironment{publist}[1]{%
 \begin{etaremune}}
