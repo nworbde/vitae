@@ -3,8 +3,8 @@
 % Edward Brown, Michigan State University
 %
 
-\def\fileversion{3.0}
-\def\filedate{2014/04/09}
+\def\fileversion{3.1}
+\def\filedate{2014/04/13}
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{vitae}[\filedate, \fileversion]
