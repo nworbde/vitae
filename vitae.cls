@@ -3,8 +3,8 @@
 % Edward Brown, Michigan State University
 %
 
-\def\fileversion{3.0}
-\def\filedate{2014/04/09}
+\def\fileversion{3.1}
+\def\filedate{2014/04/13}
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{vitae}[\filedate, \fileversion]
@@ -32,24 +32,26 @@
 \addtolength{\headerlength}{-2\fboxsep}
 \addtolength{\headerlength}{-2\fboxrule}
 
-\newenvironment{chronlist}[1]{%
-\colorbox{grey95}{\makebox[\headerlength][l]{\scshape\Large #1\hrulefill}}%
-\begin{list}{}{ \nopagebreak
-                \setlength{\topsep}{1.0ex plus0.1ex minus0.1ex}%
-                \setlength{\leftmargin}{96pt}%
-                \setlength{\labelwidth}{86pt}%
-                \setlength{\labelsep}{4pt}%
-                \setlength{\parsep}{1.0ex plus0.1ex minus0.1ex}%
-                \setlength{\partopsep}{1.0ex plus0.1ex minus0.1ex}%
-                \setlength{\itemsep}{0ex}%
-                \renewcommand{\makelabel}[1]{\parbox[t]{86pt}{\itshape
-                ##1}\hfill}}}%
-{\end{list}\vspace{4.0ex plus 1ex minus 1ex}}
+\newcommand{\sectionheader}[1]{%
+\colorbox{grey95}{\makebox[\headerlength][l]{\scshape\Large #1\hrulefill}}}
 
-\newenvironment{genericlist}[1]{%
-\colorbox{grey95}{\makebox[\headerlength][l]{\scshape\Large #1\hrulefill}}%
-\begin{list}{}{ \nopagebreak
-                \setlength{\topsep}{-1ex plus0.3ex minus0.3ex}
+\newcommand{\publicationheader}[1]{%
+{\scshape\Large #1}}
+
+\newenvironment{chronlist}{%
+\begin{list}{}{ \setlength{\topsep}{0ex plus0.1ex minus0.3ex}
+                \setlength{\leftmargin}{96pt}
+                \setlength{\labelwidth}{86pt}
+                \setlength{\labelsep}{4pt}
+                \setlength{\parsep}{1.0ex plus0.1ex minus0.1ex}
+                \setlength{\partopsep}{1.0ex plus0.1ex minus0.1ex}
+                \setlength{\itemsep}{0ex}
+                \renewcommand{\makelabel}[1]{\parbox[t]{86pt}{\itshape
+                ##1}\hfill}}}
+{\end{list}\vspace{4.0ex plus 0.5ex minus 0.1ex}}
+
+\newenvironment{genericlist}{%
+\begin{list}{}{ \setlength{\topsep}{0ex plus0.1ex minus0.3ex}
                 \setlength{\leftmargin}{36pt}
                 \setlength{\labelwidth}{0pt}
                 \setlength{\labelsep}{0pt}
@@ -57,9 +59,9 @@
                 \setlength{\itemsep}{0ex}
                 \setlength{\parsep}{1.0ex plus0.1ex minus0.1ex}
                 \setlength{\partopsep}{1.0ex plus0.1ex minus0.1ex}}}
-{\end{list}\vspace{4.0ex plus 1ex minus 1ex}}
+{\end{list}\vspace{4.0ex plus 0.5ex minus 0.1ex}}
 
-\newenvironment{publist}[1]{\vspace{4.0ex plus 1.0ex minus 1.0ex}{\scshape\Large #1}%
+\newenvironment{publist}[1]{%
 \begin{etaremune}}
 {\end{etaremune}}
 
