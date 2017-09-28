@@ -1,0 +1,83 @@
+#!/usr/bin/env bash
+
+USAGE="</path/to/texmf>"
+LONG_USAGE="Installs vitae class to </path/to/texmf/tex/latex> and the 
+documentation to </path/to/texmf/doc/latex/vitae/>."
+LATEX=`which pdflatex`
+LATEXOPS="--file-line-error"
+DOCBASE='vitae'
+DOCSTY="$DOCBASE.cls"
+DOCMAN="sample_CV"
+ROOTPATH=""
+SRCDIR=""
+DOCDIR=""
+THISDIR=`pwd`
+
+function show_help {
+	echo "usage: $(basename "$0") $USAGE"
+	echo
+	echo "$LONG_USAGE"
+	exit 0
+}
+
+function check_okay {
+    if [ $? -ne 0 ]; then
+        echo
+        echo "processing failed..."
+        exit 1
+    fi
+}
+
+function rerun_if_necessary {
+    grep -i --regexp="Rerun" $DOCMAN.log
+    if [ $? -eq 0 ]; then
+        echo "rerunning latex"
+        $LATEX $LATEXOPS $DOCMAN
+        check_okay
+    fi
+}
+
+# must have one argument: the path name to the texmf directory or a --help flag
+if [ "$#" -ne 1 ]; then
+	show_help
+fi
+
+# process options
+case "$1" in
+    -h|--help)
+	show_help
+esac
+
+ROOTDIR="$1"
+SRCDIR=$ROOTDIR/tex/latex/vitae
+DOCDIR=$ROOTDIR/doc/latex/vitae
+
+if [ ! -d $SRCDIR ]; then
+	echo "making $SRCDIR"
+	mkdir -p $SRCDIR
+	check_okay
+fi
+
+echo "copying $DOCSTY to $SRCDIR"
+cp $DOCSTY $SRCDIR
+check_okay
+
+if [ ! -d $DOCDIR ]; then
+	echo "making $DOCDIR"
+	mkdir -p $DOCDIR
+	check_okay
+fi
+
+echo "copying $DOCMAN to $DOCDIR"
+cp doc/$DOCMAN.tex $DOCDIR
+check_okay
+
+cd $DOCDIR
+$LATEX $LATEXOPS $DOCMAN
+rerun_if_necessary
+rerun_if_necessary
+
+#cleanup
+rm -f $DOCMAN.{aux,log,out}
+
+cd $THISDIR
